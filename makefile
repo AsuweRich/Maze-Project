@@ -31,7 +31,7 @@ linux : $(OBJS)
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINUX_LINKER_FLAGS) -DLINUX -o $(OBJ_NAME)
 
 #Linux SDL installation
-linux_install : 
+linux_install :
 	sudo apt-get install libsdl2-dev
 
 #MAC SDL compiling
