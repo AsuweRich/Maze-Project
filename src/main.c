@@ -1,97 +1,21 @@
-#include "../headers/header.h"
-
-bool GameRunning = false;
-int TicksLastFrame;
-player_t player;
+#include "raycaster.h"
 
 /**
- * setup_game - initialize player variables and load wall textures
- *
+* main - main function
+* Return: 0 Success, -1 Error
 */
-
-void setup_game(void)
-{
-
-	player.x = SCREEN_WIDTH / 2;
-	player.y = SCREEN_HEIGHT / 2;
-	player.width = 1;
-	player.height = 30;
-	player.walkDirection = 0;
-	player.walkSpeed = 100;
-	player.turnDirection = 0;
-	player.turnSpeed = 45 * (PI / 180);
-	player.rotationAngle = PI / 2;
-	WallTexturesready();
-}
-
-
-/**
- * update_game - update_game delta time, the ticks last frame
- *          the player movement and the ray casting
- *
-*/
-void update_game(void)
-{
-	float DeltaTime;
-	int timeToWait = FRAME_TIME_LENGTH - (SDL_GetTicks() - TicksLastFrame);
-
-	if (timeToWait > 0 && timeToWait <= FRAME_TIME_LENGTH)
-	{
-		SDL_Delay(timeToWait);
-	}
-	DeltaTime = (SDL_GetTicks() - TicksLastFrame) / 1000.0f;
-
-	TicksLastFrame = SDL_GetTicks();
-
-	movePlayer(DeltaTime);
-	castAllRays();
-}
-
-/**
- * render - calls all functions needed for on-screen rendering
- *
-*/
-
-void render_game(void)
-{
-	clearColorBuffer(0xFF000000);
-
-	renderWall();
-
-	renderMap();
-	renderRays();
-	renderPlayer();
-
-	renderColorBuffer();
-}
-
-/**
- * Destroy - free wall textures and destroy window
- *
-*/
-void destroy_game(void)
-{
-	freeWallTextures();
-	destroyWindow();
-}
-
-/**
- * main - main function
- * Return: 0
-*/
-
 int main(void)
 {
-	GameRunning = initializeWindow();
+	t_sdl sdl;
+	t_raycaster rc;
 
-	setup_game();
-
-	while (GameRunning)
-	{
-		handleInput();
-		update_game();
-		render_game();
-	}
-	destroy_game();
+	if (init(&sdl, &rc) != 0)
+		return (-1);
+	raycaster(&sdl, &rc);
+	if (sdl.renderer)
+		SDL_DestroyRenderer(sdl.renderer);
+	if (sdl.window)
+		SDL_DestroyWindow(sdl.window);
+	SDL_Quit();
 	return (0);
 }
