@@ -10,7 +10,7 @@ The Maze was written was written in `C` ussing `SDL2` library. Deveploment was p
 
 ## Instalation 
 ```sh
-$ git clone https://github.com/AsuweRich/Maze-Project.git
+$ git clone https://github.com/AsuweRich/The-Maze-Project.git
 ```
 ## Usage 
 * Use up and down arrow keys to move forward and backward (keys `w` and `s` serve the same function)
@@ -33,19 +33,19 @@ where ```MAP``` is the name of the file found in the maps folder. You can create
 
 ## Directories
 
-[`src`](https://github.com/AsuweRich/Maze-Project/tree/main/src)
+[`src`](https://github.com/AsuweRich/The-Maze-Project/tree/main/src)
 
 Contains all the source code files written in C.
 
-[`inc`](https://github.com/AsuweRich/Maze-Project/tree/main/inc)
+[`inc`](https://github.com/AsuweRich/The-Maze-Project/tree/main/inc)
 
 Contains all the header files.
 
-[`maps`](https://github.com/AsuweRich/Maze-Project/tree/main/maps)
+[`maps`](https://github.com/AsuweRich/The-Maze-Project/tree/main/maps)
 
 Contains map data files. This will be used by the program to output the map layout.
 
-[`images`](https://github.com/AsuweRich/Maze-Project/tree/main/images)
+[`images`](https://github.com/AsuweRich/The-Maze-Project/tree/main/images)
 
 Contains image files.
 
@@ -63,7 +63,7 @@ https://www.seekpng.com/idown/u2w7u2t4i1y3a9y3_call-of-duty-guns-firearms-gun-we
 ## Contributing
 
 - Read the source files in ```src``` folder and the header files in ```inc``` folder.
-- Clone the repo and make a new branch: `$ git checkout https://github.com/AsuweRich/Maze-Project -b [name_of_new_branch].`
+- Clone the repo and make a new branch: `$ git checkout https://github.com/AsuweRich/The-Maze-Project -b [name_of_new_branch].`
 - Add a feature, fix a bug, or refactor some code :)
 - Write/update tests for the changes you made, if necessary.
 - Update README.md if necessary.
