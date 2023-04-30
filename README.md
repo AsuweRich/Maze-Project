@@ -1,5 +1,9 @@
 # The Maze
 
+![Repo size](https://img.shields.io/github/repo-size/AsuweRich/The-Maze-Project)
+![Repo License](https://img.shields.io/github/license/AsuweRich/The-Maze-Project.svg)
+![Latest commit](https://img.shields.io/github/last-commit/AsuweRich/The-Maze-Project/main?style=round-square)
+
 The Maze is a 3D Maze game that uses ray casting to render a 2D map into a 3D navigable world!
 
 The Maze was written was written in `C` ussing `SDL2` library. Deveploment was performed using `Ubuntu 14.04 LTS` - gcc (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4
